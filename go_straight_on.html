@@ -1,0 +1,2823 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+		function go_straight_on(){
+			var fresher_stoke = 7;
+			var number_of_flapjack = 4;
+			var current_time = 1800;
+			var player_name = "";
+			var callout = 1900;
+			var time_increment = 2;
+			var stoke_increment = 0.25;
+			var stoke_threshold = 3;
+			
+			//Startup functions
+			
+			function what_is_name() {
+			  player_name = prompt("Welcome to GO STRAIGHT ON. Before your adventure begins, what is your first name?");
+			}			
+			
+			function start_game() {
+				fresher_stoke = 5;
+				number_of_flapjack = 4;
+				current_time = 1800;
+				what_is_name();
+				begin_caving = prompt("You are in a cave you've never visited before, but the cave-worm that you were with seemed to know where they were going. You didn't pay attention on the way in - silly you! Unfortunately a honey badger with a lightening scar on its forehead attacked with irresistable savagery, dragging them away to its lair in an inaccessable crevice. You're no doctor, but they look beyond help, except perhaps by powerful necromancy. Are you ready to find your way out of this cave while making sure the fresher doesn't get sad, tired, lonely or bored? Be quick! Callout is in one hour.\n Type GO STRAIGHT ON to begin.");
+				if (begin_caving == "GO STRAIGHT ON") {
+					locationAA();
+				} 
+				else {
+					alert("You give up easily don't you? Perhaps your stoke levels were too low. You lay down and wait for cave rescue. After they find you and you become a laughing stock and have to buy cave rescue several barrels of beer. The fresher hates caving and never comes back. ");
+				}
+			}
+			
+			//Location functions
+			
+			function locationAA() {
+				increment_time_and_stoke();
+				var player_response = prompt("You are wedged high up in a cross-roads. All of the routes are tight and rifty. You turn to face one of the routes and see a large coffin-shaped slab ahead of you.");
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAA();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAA();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAA();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAA();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAA();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You climb over the coffin-shaped slab")
+					locationAD()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAZ()
+				}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationAC()
+				}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationAB()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAA();
+				}
+			}
+			
+			function locationAB() {
+				increment_time_and_stoke();				
+				var player_response = prompt("The rift closes down and becomes impassable \n Which way do you go?");
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAB();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAB();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAB();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAB();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAB();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You climb over the coffin-shaped slab")
+				//	locationAD()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAA()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAC()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAB()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAB();
+				}
+			}
+			
+			function locationAZ() {
+				increment_time_and_stoke();				
+				var player_response = prompt("The rift quickly becomes too tight \n Which way do you go?  ");
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAZ();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAZ();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAZ();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAZ();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAZ();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You climb over the coffin-shaped slab")
+				//	locationAD()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAA()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAC()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAB()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAZ();
+				}
+			}
+
+			function locationAC() {
+			increment_time_and_stoke();
+			var player_response = prompt("You arrive at a T-junction and face down the stem of the T. There is a way on to your left and ahead ascends to an up sloping bouldery rift. \n Which way do you go?");
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAC();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAC();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAC();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAC();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAC();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationAG()
+				}
+				//else if (player_response == "GO BACK"){
+				//	alert("You turn around and go down the passage")
+				//	locationAA()
+				//}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationAE()
+				}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationAA()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAC();
+				}
+			}			
+			
+			function locationAE() {
+			increment_time_and_stoke();
+			var player_response = prompt("The way on turns left then becomes too tight. \n Which way do you go?  ");
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAE();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAE();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAE();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAE();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAE();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You climb over the coffin-shaped slab")
+				//	locationAE()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAC()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAC()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAF()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAE();
+				}
+			}			
+
+			function locationAF() {
+				var player_response = prompt("The intersecting rift becomes too tight. \n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAF();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAF();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAF();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAF();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAF();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAG()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAG()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAC()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAF()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAF();
+				}
+			}			
+
+			function locationAG() {
+				var player_response = prompt("You are in a bouldery rift and another rift intersects it, creating a crossroads. Standing in the bouldery rift, you look up slope, with the intersecting rift continuing to your left and right and the bouldery rift continuing ahead and behind. \n Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAG();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAG();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAG();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAG();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAG();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationAH()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAC()
+				}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationAI()
+				}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationAF()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAG();
+				}
+			}			
+
+			function locationAH() {
+				var player_response = prompt("The bouldery rift becomes too tight ot follow. \n Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAH();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAH();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAH();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAH();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAH();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAG()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAH();
+				}
+			}			
+
+			function locationAI() {
+				var player_response = prompt("You are in a rift facing a very tight squeeze. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout();
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless();	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAI();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAI();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAI();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAI();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAI();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAJ()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage");
+					locationAG();
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				else if (player_response == "ATTEMPT SQUEEZE"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You go through the squeeze");
+						locationAJ();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationAI();
+					}
+				}
+				else {
+					you_cant_do_that();
+					locationAI();
+				}
+			}			
+
+			function locationAJ() {
+				var player_response = prompt("You are standing in spacious rift, and turn to face up a muddy slope. The rift continues up the muddy slope and behind you. To your right is a very tight squeeze. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAJ();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAJ();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAJ();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAJ();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAJ();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationAM()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAK()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAK()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAM()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				else if (player_response == "ATTEMPT SQUEEZE"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You go through the squeeze");
+						locationAI();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationAJ();
+					}
+				}
+				else {
+					you_cant_do_that();
+					locationAJ();
+				}
+			}			
+
+			function locationAK() {
+				var player_response = prompt("You are standing in a roomy rift. Two ways on present themselves, but neither go very far. \n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAK();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAK();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAK();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAK();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAK();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAJ()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAK();
+				}
+			}			
+
+			function locationAM() {
+				var player_response = prompt("You are at the top of a muddy slope in a spacious rift. With your back to the slope you see flowstone and speleothems in the route ahead. \n Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAM();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAM();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAM();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAM();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAM();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationAN()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAJ()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAM();
+				}
+			}			
+
+			function locationAN() {
+				var player_response = prompt("You continue along the rift, with a profusion of speleothems, until it terminates in an unstable boulder choke. \n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAN();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAN();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAN();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAN();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAN();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAM()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAN();
+				}
+			}			
+
+			function locationAD() {
+				var player_response = prompt("You are high up in a roomy rift. You turn to face a 7m climb down through wedged boulders. Behind you is a coffin-shaped boulder. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAD();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAD();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAD();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAD();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAD();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You go straight on, and fall down the pitch. Maybe you should open your eyes before following the UBSS motto. Luckily you are unharmed, but as you dust yourself off you see confidence drain from the fresher.")
+					fresher_stoke = fresher_stoke - 1
+					locationAO()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAA()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				else if (player_response == "CLIMB DOWN"){
+					alert("You climb down the pitch")
+					locationAO()
+				}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAD();
+				}
+			}			
+
+			function locationAO() {
+				var player_response = prompt("You are standing at a cross joint and you turn to face a 7m climb up through wedged boulders. To your left is a narrow passage, and a continuation of the same rift goes on to the right. Behind you is a small rift that immediatly chokes. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAO();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAO();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAO();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAO();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAO();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAOX()
+				//}
+				//else if (player_response == "GO BACK"){
+				//	alert("You turn around and go down the passage")
+				//	locationAD()
+				//}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationAQ()
+				}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationAP()
+				}
+				else if (player_response == "CLIMB UP"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb up the pitch")
+						locationAD()
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationAO();
+					}										
+				}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAO();
+				}
+			}			
+
+			function locationAP() {
+				increment_time_and_stoke();				
+				var player_response = prompt("The way on becomes too tight, but you see a continuation beyond.  \n Which way do you go?  ");
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAP();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAP();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAP();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAP();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAP();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You climb over the coffin-shaped slab")
+				//	locationAD()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAO()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAC()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAB()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAP();
+				}
+			}
+						
+			function locationAQ() {
+				var player_response = prompt("You are facing the bottom of an awkward and tight 5m pitch with a ladder rigged. A narrow passage continues behind you. \n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAQ();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAQ();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAQ();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAQ();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAQ();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAO()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				else if (player_response == "CLIMB UP"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb up the pitch");
+						locationAR();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationAQ();
+					}					
+				}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAQ();
+				}
+			}			
+
+			function locationAR() {
+				var player_response = prompt("You arrive in a boulder chamber. You face a descending route with a loose scaffold bar above it. To your right, and obvious crawl leaves the boulder chamber. The boulder chamber continues to your left. Behind you, a narrow crack descends to a tight and awkward 5m pitch with a ladder rigged in it. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAR();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAR();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAR();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAR();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAR();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationAU()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAQ()
+				}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationAT()
+				}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationAS()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				else if (player_response == "CLIMB DOWN"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb down the pitch");
+						locationAQ();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationAR();
+					}
+				}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAR();
+				}
+			}			
+
+			function locationAS() {
+				var player_response = prompt("You find yourself in a decorated rift - Nice! It quickly chokes, however \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout();
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless();	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAS();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAS();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAS();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAS();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAS();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage");
+					locationAR();
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAS();
+				}
+			}			
+			
+			function locationAT() {
+				var player_response = prompt("The boulder chamber gets lower and lower and eventually progress becomes impossible. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout();
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless();	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAT();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAT();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAT();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAT();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAT();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage");
+					locationAR();
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAT();
+				}
+			}			
+			
+			function locationAU() {
+				var player_response = prompt("You are in another rift. A roomy steeply descending rift intersects to create a T-junction. Facing the top of the T, the roomy rift descends behind you and then ascends again to a loose scaffold bar. The other rift continues to the left and right. The left hand route turns 90 degrees to the right and reaches a squeeze. \n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAU();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAU();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAU();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAU();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAU();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAR()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAX()
+				//}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationAV()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				else if (player_response == "ATTEMPT SQUEEZE"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You go through the squeeze.");
+						locationAY();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationAU();
+					}
+					
+				}
+				else {
+					you_cant_do_that();
+					locationAU();
+				}
+			}			
+
+			function locationAV() {
+				var player_response = prompt("The rift chokes. \n Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAV();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAV();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAV();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAV();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAV();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAU()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationAV();
+				}
+			}						
+			
+			function locationAY() {
+				var player_response = prompt("You are in a rift where another rift meets it to create a T-junction. Facing the top of the T, the rift continues to your left and right, and behind you the other rift passes over an impassable perpendicular to a squeeze. Beyond the squeeze, the rift turns 90 degrees to the left. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationAY();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationAY();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationAY();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationAY();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationAY();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				//else if (player_response == "GO BACK"){
+				//	alert("You turn around and go down the passage")
+				//	locationAU()
+				//}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationBB()
+				}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationBA()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				else if (player_response == "ATTEMPT SQUEEZE"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You go through the squeeze");
+						locationAU();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationAY();
+					}
+				}
+				else {
+					you_cant_do_that();
+					locationAY();
+				}
+			}			
+			
+			function locationBA() {
+				var player_response = prompt("You are in a rift facing a choke. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBA();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBA();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBA();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBA();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBA();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("What, you want to start a dig? Right now? In this cave? With one casualty waiting? With " + (callout - current_time) + "minutes until callout?")
+					locationBA()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationAY()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBA();
+				}
+			}			
+			
+			function locationBB() {
+				var player_response = prompt("You are standing at a crossroads of two perpendicular rifts. You turn to face a climb up. The two perpendicular rifts continue behind you, to your left and to your right. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBB();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBB();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBB();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBB();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBB();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationBD()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBE()
+				}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationAY()
+				}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationBD()
+				}
+				else if (player_response == "CLIMB UP"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb up the pitch");
+						locationBC();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationBB();
+					}
+
+				}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBB();
+				}
+			}			
+			
+			function locationBC() {
+				var player_response = prompt("You are in a small bouldery grotto. There are several gaps in the boulders, but none of them go anywhere. \n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBC();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBC();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBC();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBC();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBC();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				//else if (player_response == "GO BACK"){
+				//	alert("You turn around and go down the passage")
+				//	locationBB()
+				//}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				else if (player_response == "CLIMB DOWN"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb down the pitch");
+						locationBB();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationBC();
+					}
+				}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBC();
+				}
+			}			
+			
+			function locationBD() {
+				var player_response = prompt("The way on chokes with boulders. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBD();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBD();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBD();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBD();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBD();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBB()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBD();
+				}
+			}			
+
+			function locationBE() {
+				var player_response = prompt("You are in a large, 15m high rift at a crossroads. The route behind you in the main rift has wedged boulders in the ceiling. Ahead the rift continues down a slope. To the left you see an exceedingly tight squeeze and daylight beyond. To the right is another rift. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBE();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBE();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBE();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBE();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBE();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationBF()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBL()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationBL()
+				//}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationBB()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				else if (player_response == "ATTEMPT SQUEEZE"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You go through the squeeze");
+						locationBK();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationBE();
+					}
+
+				}
+				else {
+					you_cant_do_that();
+					locationBE();
+				}
+			}			
+
+			function locationBF() {
+				var player_response = prompt("You are in a large rift and face downslope, where the rift becomes slightly narrower. To your left, another rift joins. Behind you the rift goes upslope and enlarges. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBF();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBF();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBF();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBF();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBF();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationBH()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBE()
+				}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationBG()
+				}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBF();
+				}
+			}			
+
+			function locationBG() {
+				var player_response = prompt("You are in a narrow rift. Ahead chokes. \n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBG();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBG();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBG();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBG();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBG();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBF()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBG();
+				}
+			}			
+
+			function locationBH() {
+				var player_response = prompt("You are in a gradually narrowing rift. You turn to face the direction where the rift narrows further. To your right is and even smaller rift. Behind you the passage enlarges. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBH();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBH();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBH();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBH();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBH();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationBI()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBF()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationBJ()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBH();
+				}
+			}			
+
+			function locationBJ() {
+				var player_response = prompt("You arrive at a small series of interlocking rifts, none of which are human sized. \n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBD();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBJ();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBJ();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBJ();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBJ();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBH()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBJ();
+				}
+			}			
+
+			function locationBI() {
+				var player_response = prompt("The rift ahead closes down and chokes. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBI();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBI();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBI();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBI();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBI();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBH()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBI();
+				}
+			}			
+
+			function locationBK() {
+				var player_response = prompt("It looks like there is a tight entrance ahead - you can smell earth and fresh air. \n Which way do you go?  ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBK();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBK();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBK();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBK();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBK();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					end_game()
+				}
+				//else if (player_response == "GO BACK"){
+				//	alert("You turn around and go down the passage")
+				//	locationBE()
+				//}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				else if (player_response == "ATTEMPT SQUEEZE"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You go through the squeeze");
+						locationBE();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationBK();
+					}
+				
+				}
+				else {
+					you_cant_do_that();
+					locationBK();
+				}
+			}			
+
+			function locationBL() {
+				var player_response = prompt("You are standing in a large rift roughly 15m high and 2m wide, which descends in both directions. You turn to face one of the ways on and see what looks like a down-climb over a huge collapsed block. The large rift continues in the opposite direction behind you, with boulders wedged in the ceiling To your right there is a smaller route that seems to lead to an 8m climb. \n Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBL();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBL();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBL();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBL();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBL();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					locationBN()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBE()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationBM()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBM();
+				}
+			}			
+
+			function locationBP() {
+				var player_response = prompt("You are in a low crawl with light ahead of you... \n Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBP();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBP();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBP();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBP();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBP();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage")
+					end_game()
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBO();
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){
+				//	if (fresher_stoke > stoke_threshold){
+				//		alert("You go through the squeeze");
+				//		locationBE();
+				//	}
+				//	else {
+				//		alert("The fresher calls ahead: 'I don't like the looks of that'");
+				//		locationBK();
+				//	}				
+				//}
+				else {
+					you_cant_do_that();
+					locationBP();
+				}
+			}						
+			
+			function locationBM() {
+				var player_response = prompt("The way appears blocked, but is that daylight up there? It looks too tricky to climb up to, but you notice an earthy slope that seems to bypass the climb. You smell fresh air and earth. The way on is low, but you become more certain you can see light... \n  Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBM();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBM();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBM();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBM();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBM();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage");
+					end_game();
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBL();
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBM();
+				}
+			}			
+
+			function locationBN() {
+				var player_response = prompt("- You are standing at the top of a short climb over a huge collapsed block. Beyond the block, the passage ascends steeply.\n  Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBN();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBN();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBN();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBN();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBN();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You fall down the climb. Why did you just walk off? The fresher seems concerned.")
+					fresher_stoke = fresher_stoke - 2 * stoke_increment; 
+					locationBO();
+				}
+				else if (player_response == "GO BACK"){
+					alert("You turn around and go down the passage")
+					locationBL()
+				}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationAGX()
+				//}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				else if (player_response == "CLIMB DOWN"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb down the pitch");
+						locationBO();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationBN();
+					}
+				}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBN();
+				}
+			}			
+
+			function locationBO() {
+				var player_response = prompt("You reach a cross-rift, making a T-junction. You face the top of the T . Behind you the passage descends to a climb up over a huge collapsed block, and to your right a low crawl ascends. You think you see daylight up to the right. To the left you see a small chamber.\n Which way do you go?");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBO();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBO();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBO();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBO();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBO();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				//else if (player_response == "GO BACK"){
+				//	alert("You turn around and go down the passage")
+				//	locationBN()
+				//}
+				else if (player_response == "GO LEFT"){
+					alert("You take the passage to your left")
+					locationBQ()
+				}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationBP()
+				}
+				else if (player_response == "CLIMB UP"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb up the pitch");
+						locationBN();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationBO();
+					}
+				}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBO();
+				}
+			}			
+
+			function locationBQ() {
+				var player_response = prompt("You are standing in a small chamber. The way to the right heads back to the T-junction. Ahead goes to a small climb with a fixed handline on it. \n Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBQ();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBQ();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBQ();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBQ();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBQ();
+				}
+				else if (player_response == "GO STRAIGHT ON"){
+					alert("You carry on along the passage and fall do the pitch that you had just look straight at. Bet you feel dumb now. Seeing your bruises, the fresher feels uneasy.")
+					fresher_stoke = fresher_stoke - 2 * stoke_increment;
+					locationBR();
+				}
+				//else if (player_response == "GO BACK"){
+				//	alert("You turn around and go down the passage")
+				//	locationBO()
+				//}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationAI()
+				//}
+				else if (player_response == "GO RIGHT"){
+					alert("You take the passage to your right")
+					locationBO()
+				}
+				//else if (player_response == "CLIMB UP"){
+				//	alert("You climb down the pitch")
+				//	location()
+				//}
+				else if (player_response == "CLIMB DOWN"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb down the pitch");
+						locationBR();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationBQ();
+					}
+
+				}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBQ();
+				}
+			}			
+
+			function locationBR() {
+				var player_response = prompt("You are in a rift chamber which chokes in both directions. Behind you is a 3m handline climb. \n Which way do you go? ");
+				increment_time_and_stoke();
+				if(current_time == callout){
+					is_callout()
+				}
+				else if(fresher_stoke < 1){
+					is_stokeless()	
+				}
+				else if(player_response == "CHECK TIME"){
+					check_time();
+					locationBR();
+				}
+				else if (player_response == "CHECK FLAPJACK"){
+					check_flapjack();
+					locationBR();
+				}
+				else if (player_response == "HOW ARE YOU FEELING?"){
+					stoke_check();
+					locationBR();
+				}
+				else if (player_response == "DO YOU WANT SOME FLAPJACK?"){
+					alert("Yes please!");
+					give_flapjack();
+					locationBR();
+				}
+				else if (player_response == "HAVE YOU HEARD THIS ONE?"){
+					tell_joke();
+					locationBR();
+				}
+				//else if (player_response == "GO STRAIGHT ON"){
+				//	alert("You carry on along the passage")
+				//	locationAH()
+				//}
+				//else if (player_response == "GO BACK"){
+				//	alert("You turn around and go down the passage")
+				//	locationBQ()
+				//}
+				//else if (player_response == "GO LEFT"){
+				//	alert("You take the passage to your left")
+				//	locationBS()
+				//}
+				//else if (player_response == "GO RIGHT"){
+				//	alert("You take the passage to your right")
+				//	locationBT()
+				//}
+				else if (player_response == "CLIMB UP"){
+					if (fresher_stoke > stoke_threshold){
+						alert("You climb up the pitch");
+						locationBQ();
+					}
+					else {
+						alert("The fresher calls ahead: 'I don't like the looks of that'");
+						locationBR();
+					}
+
+				}
+				//else if (player_response == "CLIMB DOWN"){
+				//	alert("You climb up the pitch")
+				//	location()
+				//}
+				//else if (player_response == "ATTEMPT SQUEEZE"){}
+				else {
+					you_cant_do_that();
+					locationBR();
+				}
+			}			
+						
+			//end game checks
+			
+			function is_callout(){
+				player_response = prompt("You have missed your callout! Cave rescue find you and you become a laughing stock and have to buy cave rescue several barrels of beer. The fresher hates caving and never comes back.\n GAME OVER\n Type RESTART to try again or anything you like to quit") 
+				if(player_response == "RESTART"){
+					start_game();
+				}
+			}
+			
+			function is_stokeless(){
+				player_response = prompt("The fresher is so un-stoked that they hate caving and will never come back, even if they do make it out alive.\n GAME OVER\n Type RESTART to try again or anything you like to quit");
+				if(player_response == "RESTART"){
+					start_game();
+				};
+
+			}
+			
+			function end_game(){
+				var player_response = prompt("Congratultionsltions! You got out of the cave before your callout and the fresher didn't have a rotten time, as far as you can tell. You pick up your copy of Mendip Underground and try to work out which cave you were in. You think it is..."); 
+				if (player_response == "SALLY'S RIFT"){
+					player_response = prompt("Yes! Sally's Rift looks right. Time for the Hunter's. YOU WIN! Type PLAY AGAIN to err... play again, and anything you like to close this box");
+					if (player_response = "PLAY AGAIN"){
+						start_game();
+					}
+				}
+				else {
+					player_response = prompt("Hmm...No, that doesn't look right. Maybe you should have surveyed it. Do you want to go back and survey it (RESTART)?");
+					if (player_response == RESTART){
+						start_game();
+					}
+				}
+			}
+			
+			//action functions
+			
+			function you_cant_do_that(){
+				alert("You can't do that");
+			}
+
+			function check_flapjack(){
+				alert("You have " + number_of_flapjack + " pieces of flapjack");
+			}
+
+			function check_time() {
+				alert("Call out is at " + callout + ". The current time is: " + current_time);
+			}			
+			
+			function stoke_check() {
+				if (fresher_stoke < 3) {
+					alert("Are we going to die?");
+				}
+				else if (fresher_stoke == 3) {
+					alert("I'm scared.");
+				}			  
+				else if (fresher_stoke == 4) {
+					alert("Why do you enjoy this?");
+				}			  
+				else if (fresher_stoke == 5) {
+					alert("Man, I a looking forward to a shower.");
+				}			  
+				else if (fresher_stoke == 6) {
+					alert("I am alright, thanks.");
+				}			  
+				else if (fresher_stoke == 7) {
+					alert("Yay caving!");
+				}			  
+				else if (fresher_stoke == 8) {
+					alert("This is great, how do I get on committee?");
+				}		
+				else if (fresher_stoke > 8) {
+					alert("My blood is mud, my heart is calcite. I am the cave.");
+			  }
+			}
+
+			function give_flapjack() {
+			  if (number_of_flapjack == 0) {
+			    alert("You have no flapjack to give.");
+			  } else {
+			    alert("You give the fresher some of your flapjack, and they look a bit more stoked");
+			    number_of_flapjack = number_of_flapjack - 1;
+			    fresher_stoke = fresher_stoke + 4;
+			  }
+			}
+
+			function tell_joke() {
+			  increment_time_and_stoke();
+			  if (player_name == "SIMON") {
+			    if (Math.random() < 0.5) {
+			      alert("You make a joke about having a tiny penis, which goes as well as can be expected. The fresher looks a little more stoked.");
+			      fresher_stoke = fresher_stoke + 3 * stoke_increment;
+			    } 
+				else {
+			      alert("The fresher didn't get your reference to sketch shows from the 90's, and becomes less stoked");
+			      fresher_stoke = fresher_stoke - 2 * stoke_increment;
+			    }			    
+			  } 
+			  else if (player_name == "ELAINE") {
+			    if (Math.random() < 0.35) {
+					alert("The fresher didn't get the reference to ancient Greek mythology, but is comforted by your presidential aura and becomes slightly more stoked");
+					fresher_stoke = fresher_stoke + 3 * stoke_increment;
+			    } 
+				else {
+			      alert("Your joke is met with a dead eyed stare.");
+			      fresher_stoke = fresher_stoke - stoke_increment;
+			    }			    
+			  } 
+			  else if (player_name == "ELEANOR") {
+			    if (Math.random() < 0.7) {
+					alert("Your chatter eases the fresher slightly, and they look slightly more alive.");
+					fresher_stoke = fresher_stoke + stoke_increment;
+			    } 
+				else {
+					alert("The fresher is calmed by your chatter but then you talk for 2 minutes in a self-depricating way, causing the fresher to loose a little confidence. Overall, their stoke remains unchanged, but you did waste some time.");
+					increment_time_and_stoke();
+			    }
+			  } 
+			  else if (player_name == "ELLIOTT") {
+			   	if (Math.random() < 0.7) {
+					alert("You embark on a long anecdote about Francis Bacon, only to realise at the end that you meant Francis Drake. The confusion amuses the fresher, and the look more stoked.");
+					fresher_stoke = fresher_stoke + stoke_increment;
+			    } 
+				else {
+					alert("You confuse two idioms, and your talk of chocolate teapots makes the fresher hungry, thirsty and a little less stoked");
+					fresher_stoke = fresher_stoke - stoke_increment;
+			    }
+			  }
+			  
+			  else {
+			    if (Math.random() < 0.9) {
+			      alert("You tell a good joke, and the fresher looks slightly more stoked");
+			      fresher_stoke = fresher_stoke + 3 * stoke_increment;
+			    } 
+				else {
+			      alert("The fresher doesn't get your joke, and there is an awkward silence");
+			      fresher_stoke = fresher_stoke - stoke_increment;
+			    }
+			  }
+			}
+			
+			function increment_time_and_stoke(){
+				current_time = current_time + time_increment;
+				fresher_stoke = fresher_stoke - stoke_increment;
+			}
+			
+			start_game();
+		}
+		</script>
+	</head>
+	<body>
+		<body bgcolor=#000000>
+		<title>Go Straight On</title>
+		<font color=#e0cd9b>
+		<h1>GO STRAIGHT ON ----------------------------------------------------------------------------------- An UBSS Text Adventure</h1>
+		<div><img src="The Cathedral, Box Mine.jpg" align=right width="400" height="500"></div>
+		<h1><h1>
+		<input id="play_game" type="button" value="Play Game" onclick="go_straight_on();"/>		
+		<p> <pre> Welcome to GO STRAIGHT ON. <br> Type your responses to prompts in <br> all caps. Possible commands are: <br> GO STRAIGHT ON <br> GO LEFT <br> GO RIGHT <br> GO BACK <br> CLIMB UP <br> CLIMB DOWN <br> ATTEMPT SQUEEZE <br> CHECK TIME to show how long until callout. <br> CHECK FLAPJACK to find out how much flapjack you have left. <br> Flapjack may be used to inrease fresher stoke.<br> DO YOU WANT SOME FLAPJACK? to give the fresher some flapjack.<br> HOW ARE YOU FEELING? to find out how stoked the fresher is.<br> HAVE YOU HEARD THIS ONE? to tell the fresher a joke and hopefully improve their stoke. <br> Careful though, sometime a bad joke is worse than no joke. <br>  <br> Happy caving! </pre> </p>
+		</font>
+	</body>
+</html>
